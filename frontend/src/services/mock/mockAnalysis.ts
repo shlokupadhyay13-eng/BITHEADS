@@ -1,0 +1,324 @@
+import type { Analysis } from '../../types';
+
+export const mockAnalysis: Record<string, Analysis> = {
+  'doc-gov-2024-001': {
+    documentId: 'doc-gov-2024-001',
+    analyzedAt: '2024-04-10T09:35:12Z',
+    modelVersion: 'Gemini-1.5-Pro-Policy-Tuned-v2',
+    executiveSummary: 'The Strategic Interventions for Green Hydrogen Transition (SIGHT) guidelines establish a phased financial subsidy regime totaling ₹17,490 Crore. Component I allocates direct incentives for domestic electrolyser manufacturing with tiered local value addition (LVA) requirements scaling from 40% to 60% over four years. Component II provides production-linked incentives for green hydrogen producers capped at ₹50/kg in Year 1, decreasing systematically to ₹30/kg in Year 3. The scheme assigns monitoring jurisdiction to the Solar Energy Corporation of India (SECI) with stringent quarterly milestone reviews.',
+    findings: [
+      {
+        id: 'prov-001-1',
+        title: 'Component I: Electrolyser Manufacturing Subsidy & Local Value Addition (LVA)',
+        summary: 'Direct capital incentives for establishing electrolyser manufacturing facilities in India, with eligibility contingent upon minimum 1 GW capacity allocation and verified LVA progression.',
+        mandateLevel: 'mandatory',
+        effectiveDate: '2024-06-01',
+        enforcingAgency: 'Solar Energy Corporation of India (SECI)',
+        penaltiesOrConsequences: 'Revocation of bank guarantees and forfeiture of past fiscal disbursements upon default of annual capacity commissioning milestones.',
+        citations: [
+          {
+            id: 'cit-001-1a',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 14,
+            sectionHeading: 'Section 4.2: Eligibility Criteria for Electrolyser Manufacturing',
+            paragraphNumber: 3,
+            excerptQuote: 'The bidder must commit to minimum local value addition (LVA) of 40% in Year 1, progressing to 50% in Year 2, and achieving 60% by the conclusion of Year 3. Failure to meet LVA targets triggers a proportionate reduction in quarterly incentive disbursal.',
+            confidenceScore: 0.98,
+          },
+          {
+            id: 'cit-001-1b',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 16,
+            sectionHeading: 'Section 4.5: Performance Bank Guarantee Obligations',
+            paragraphNumber: 1,
+            excerptQuote: 'Successful bidders must furnish an irrevocable Performance Bank Guarantee (PBG) equivalent to ₹15 Lakhs per MW of allotted manufacturing capacity.',
+            confidenceScore: 0.96,
+          },
+        ],
+      },
+      {
+        id: 'prov-001-2',
+        title: 'Component II: Tapering Production Incentives for Green Hydrogen',
+        summary: 'Volume-based operational subsidy on green hydrogen dispatched to qualifying off-takers, declining across a 3-year sliding schedule to foster cost parity with grey hydrogen.',
+        mandateLevel: 'mandatory',
+        effectiveDate: '2024-07-01',
+        enforcingAgency: 'Ministry of New and Renewable Energy (MNRE)',
+        penaltiesOrConsequences: 'Immediate disqualification from subsequent bidding tranches if green power procurement fails Bureau of Energy Efficiency (BEE) origin certification.',
+        citations: [
+          {
+            id: 'cit-001-2a',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 28,
+            sectionHeading: 'Section 7.3: Incentive Structure for Hydrogen Production',
+            paragraphNumber: 2,
+            excerptQuote: 'The maximum incentive disbursed shall not exceed ₹50/kg for Year 1, ₹40/kg for Year 2, and ₹30/kg for Year 3. Disbursals shall be subject to third-party verification of green energy input logs.',
+            confidenceScore: 0.99,
+          },
+        ],
+      },
+      {
+        id: 'prov-001-3',
+        title: 'Annual Reporting & Renewable Energy Certificate (REC) Accounting',
+        summary: 'Mandatory integration with the National Green Hydrogen Registry and quarterly submission of verified metered generation data.',
+        mandateLevel: 'mandatory',
+        effectiveDate: '2024-09-01',
+        enforcingAgency: 'National Green Hydrogen Oversight Committee',
+        citations: [
+          {
+            id: 'cit-001-3a',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 42,
+            sectionHeading: 'Section 11.1: Verification Protocols & Digital Registry Integration',
+            paragraphNumber: 4,
+            excerptQuote: 'All beneficiary plants must install smart bidirectional meters linked directly to the State Load Despatch Centre (SLDC) and maintain tamper-proof audit trails for a minimum statutory period of 5 years.',
+            confidenceScore: 0.94,
+          },
+        ],
+      },
+    ],
+    // Backwards-compatible duplicate mapping for keyProvisions
+    get keyProvisions() {
+      return this.findings;
+    },
+    stakeholderImpacts: [
+      {
+        id: 'stake-001',
+        groupName: 'Domestic Clean Tech Manufacturers',
+        impactType: 'positive',
+        description: 'Substantial direct capital subsidization and protected domestic procurement quotas, though high initial capital outlay and stringent bank guarantee thresholds may favor conglomerate entrants over MSMEs.',
+        complianceDeadline: '2024-12-31',
+        citations: [
+          {
+            id: 'cit-stake-1',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 18,
+            sectionHeading: 'Section 5.1: Micro, Small & Medium Enterprises Carve-outs',
+            paragraphNumber: 2,
+            excerptQuote: 'A discrete quota of 200 MW per annum shall be reserved exclusively for indigenous manufacturers possessing net worth under ₹250 Crore.',
+            confidenceScore: 0.95,
+          },
+        ],
+      },
+      {
+        id: 'stake-002',
+        groupName: 'Heavy Industry Off-takers (Fertilizer & Steel)',
+        impactType: 'compliance_requirement',
+        description: 'Required to prepare transition roadmaps substituting grey hydrogen with green hydrogen quotas in baseline manufacturing processes by 2027.',
+        complianceDeadline: '2027-03-31',
+        citations: [
+          {
+            id: 'cit-stake-2',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 35,
+            sectionHeading: 'Section 9.4: Downstream Industrial Adoption Targets',
+            paragraphNumber: 1,
+            excerptQuote: 'Industrial off-takers in ammonia synthesis and blast furnace injection shall record quarterly compliance filings demonstrating progressive green hydrogen blending percentages.',
+            confidenceScore: 0.92,
+          },
+        ],
+      },
+    ],
+    insights: [
+      {
+        id: 'risk-001',
+        category: 'enforcement_gap',
+        severity: 'high',
+        description: 'Absence of unified interstate transmission open-access waiver coordination across individual State Electricity Regulatory Commissions (SERCs). While central policy waives wheeling charges, state-level implementation remains unharmonized.',
+        suggestedRemediation: 'Issue binding statutory directions under Section 107 of the Electricity Act 2003 to enforce uniform ISTS waiver adoption across non-participating states.',
+        citations: [
+          {
+            id: 'cit-risk-1',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 51,
+            sectionHeading: 'Section 14.2: Grid Connectivity and Inter-State Open Access',
+            paragraphNumber: 3,
+            excerptQuote: 'Implementation of the waiver on intra-state transmission charges and cross-subsidy surcharges shall be governed by respective State Electricity Regulatory Commissions (SERCs).',
+            confidenceScore: 0.97,
+          },
+        ],
+      },
+      {
+        id: 'risk-002',
+        category: 'timeline_risk',
+        severity: 'medium',
+        description: 'Compressed 24-month commissioning window for electrolyser gigafactories may collide with global supply chain delays in specialized stack membranes (e.g., iridium and platinum catalysts).',
+        suggestedRemediation: 'Provide provisional 6-month force majeure extension mechanisms linked to verifiable international shipping logistics bottlenecks.',
+        citations: [
+          {
+            id: 'cit-risk-2',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 22,
+            sectionHeading: 'Section 6.1: Project Execution Milestones and Time Extensions',
+            paragraphNumber: 2,
+            excerptQuote: 'The commercial operation date (COD) must be achieved within 24 months from the issuance of the Letter of Award, with zero grace periods permitted except under extreme force majeure as certified by MNRE.',
+            confidenceScore: 0.93,
+          },
+        ],
+      },
+    ],
+    get risksAndGaps() {
+      return this.insights;
+    },
+    extractedMetrics: [
+      {
+        label: 'Total Allocated Outlay',
+        value: '17,490',
+        unit: '₹ Crore',
+        citations: [
+          {
+            id: 'cit-met-1',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 6,
+            sectionHeading: 'Section 2.1: Financial Allocations',
+            paragraphNumber: 1,
+            excerptQuote: 'The total financial outlay approved by the Cabinet for the Strategic Interventions for Green Hydrogen Transition (SIGHT) is ₹17,490 Crore through FY 2029-30.',
+            confidenceScore: 0.99,
+          },
+        ],
+      },
+      {
+        label: 'Target Electrolyser Capacity',
+        value: '3,000',
+        unit: 'MW / annum',
+        citations: [
+          {
+            id: 'cit-met-2',
+            documentId: 'doc-gov-2024-001',
+            documentTitle: 'National Green Hydrogen Mission: SIGHT Guidelines',
+            pageNumber: 8,
+            sectionHeading: 'Section 2.4: Programmatic Targets',
+            paragraphNumber: 2,
+            excerptQuote: 'The program seeks to anchor domestic manufacturing capacity of 3,000 MW per annum across proton exchange membrane and alkaline electrolyser architectures.',
+            confidenceScore: 0.98,
+          },
+        ],
+      },
+    ],
+  },
+  'doc-gov-2024-002': {
+    documentId: 'doc-gov-2024-002',
+    analyzedAt: '2024-04-12T14:18:45Z',
+    modelVersion: 'Gemini-1.5-Pro-Policy-Tuned-v2',
+    executiveSummary: 'These regulatory rules specify concrete operational compliance standards for Data Fiduciaries processing children’s personal data. The rules mandate verifiable parental consent mechanisms, strictly prohibit behavioral tracking, targeted advertisements, or emotional profiling directed at individuals under 18 years of age. Fiduciaries must implement zero-knowledge tokenized age assurance protocols and conduct independent biennial data protection audits.',
+    findings: [
+      {
+        id: 'prov-002-1',
+        title: 'Verifiable Parental Consent (VPC) Standards',
+        summary: 'Digital platforms must obtain verifiable consent from parents or legal guardians before processing any minor data, utilizing government-certified identity tokens or electronic signature channels.',
+        mandateLevel: 'mandatory',
+        effectiveDate: '2024-08-15',
+        enforcingAgency: 'Data Protection Board of India (DPBI)',
+        penaltiesOrConsequences: 'Civil penalty of up to ₹200 Crore under Schedule 1 for breach in observance of additional obligations in relation to children.',
+        citations: [
+          {
+            id: 'cit-002-1a',
+            documentId: 'doc-gov-2024-002',
+            documentTitle: 'DPDP Rules: Children’s Data & Consent',
+            pageNumber: 8,
+            sectionHeading: 'Rule 4: Mechanisms for Verifying Parental Consent',
+            paragraphNumber: 2,
+            excerptQuote: 'A Data Fiduciary shall obtain verifiable consent through identity credentials authorized by the Central Government, ensuring that the process does not persist or retain non-essential biometric identifiers.',
+            confidenceScore: 0.97,
+          },
+        ],
+      },
+      {
+        id: 'prov-002-2',
+        title: 'Absolute Prohibition of Behavioral Profiling & Targeted Ads',
+        summary: 'Total ban on tracking, monitoring, or deploying algorithmically targeted advertising to minor accounts, regardless of parental consent.',
+        mandateLevel: 'prohibitory',
+        effectiveDate: '2024-08-15',
+        enforcingAgency: 'Data Protection Board of India (DPBI)',
+        penaltiesOrConsequences: 'Immediate suspension of targeted ad engines and mandatory deletion of all user behavioral profiles.',
+        citations: [
+          {
+            id: 'cit-002-2a',
+            documentId: 'doc-gov-2024-002',
+            documentTitle: 'DPDP Rules: Children’s Data & Consent',
+            pageNumber: 15,
+            sectionHeading: 'Rule 7: Prohibitions on Tracking and Targeted Advertisements',
+            paragraphNumber: 1,
+            excerptQuote: 'No Data Fiduciary shall undertake tracking or behavioral monitoring of children or direct targeted advertising directed at children, nor shall algorithmic recommendation engines optimize for engagement duration.',
+            confidenceScore: 0.99,
+          },
+        ],
+      },
+    ],
+    get keyProvisions() {
+      return this.findings;
+    },
+    stakeholderImpacts: [
+      {
+        id: 'stake-002-1',
+        groupName: 'EdTech and Gaming Providers',
+        impactType: 'restrictive',
+        description: 'Must comprehensively re-architect registration funnels, eliminate ad-monetization trackers, and implement privacy-by-design consent verification modules.',
+        complianceDeadline: '2024-11-30',
+        citations: [
+          {
+            id: 'cit-stake-2-1',
+            documentId: 'doc-gov-2024-002',
+            documentTitle: 'DPDP Rules: Children’s Data & Consent',
+            pageNumber: 22,
+            sectionHeading: 'Rule 11: Transitional Accommodations for Educational Platforms',
+            paragraphNumber: 3,
+            excerptQuote: 'Platforms primarily offering virtual schooling or interactive educational instruction must complete compliance re-architecture within 180 days of rule gazettal.',
+            confidenceScore: 0.94,
+          },
+        ],
+      },
+    ],
+    insights: [
+      {
+        id: 'risk-002-1',
+        category: 'ambiguity',
+        severity: 'high',
+        description: 'Vague definition of "age assurance without surveillance". The rules prohibit mass biometric scanning of minors while simultaneously demanding verifiable proof that an account holder is not a child.',
+        suggestedRemediation: 'Publish technical implementation specifications approving cryptographic zero-knowledge age verification APIs to prevent platform liability paralysis.',
+        citations: [
+          {
+            id: 'cit-risk-2-1',
+            documentId: 'doc-gov-2024-002',
+            documentTitle: 'DPDP Rules: Children’s Data & Consent',
+            pageNumber: 11,
+            sectionHeading: 'Rule 5.3: Data Minimization in Age Verification',
+            paragraphNumber: 2,
+            excerptQuote: 'The assurance mechanism shall establish majority status without compiling cumulative activity logs or storing unencrypted demographic markers.',
+            confidenceScore: 0.95,
+          },
+        ],
+      },
+    ],
+    get risksAndGaps() {
+      return this.insights;
+    },
+    extractedMetrics: [
+      {
+        label: 'Maximum Statutory Penalty',
+        value: '200',
+        unit: '₹ Crore',
+        citations: [
+          {
+            id: 'cit-met-2-1',
+            documentId: 'doc-gov-2024-002',
+            documentTitle: 'DPDP Rules: Children’s Data & Consent',
+            pageNumber: 31,
+            sectionHeading: 'Schedule 1: Penalty Matrix',
+            paragraphNumber: 1,
+            excerptQuote: 'Penalties for failure to enforce child data protections may extend up to Two Hundred Crore Rupees per proven infringement incident.',
+            confidenceScore: 0.99,
+          },
+        ],
+      },
+    ],
+  },
+};
