@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Government Policies & Reports Analyser — Backend Foundation
 
 A robust, enterprise-grade Express.js and MongoDB backend scaffold powering the **Government Policies & Reports Analyser**. Built for multi-developer hackathon execution, this module provides resilient database connectivity, complete Mongoose schema modeling, security headers, centralized error handling, and comprehensive automated test coverage.
@@ -191,3 +192,6 @@ npm test
    Update `PORT=5001` in your `.env` file.
 3. **MongoDB Memory Server Download Failed during `npm test`:**
    Check your internet connection or firewall settings preventing binary download from `fastdl.mongodb.org`.
+=======
+# BITHEADS
+>>>>>>> 7152c7c98981d33dcdd3aabedeb518c64102b8f4
